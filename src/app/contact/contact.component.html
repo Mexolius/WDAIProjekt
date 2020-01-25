@@ -1,0 +1,42 @@
+<h1>Send us YOUR oppinion</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+    <h5 *ngIf="success">Your message has been sent! We got you.</h5>
+
+    <label>
+      Name:
+      <input type="text" formControlName="name">
+      <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
+        <div *ngIf="messageForm.controls.name.errors.required">Your dish needs a name</div>
+      </div>
+    </label>
+
+    <label>
+      Image:
+      <input type="text" formControlName="image">
+      <div *ngIf="submitted && messageForm.controls.image.errors" class="error">
+        <div *ngIf="messageForm.controls.image.errors.required">Source path to image is required</div>
+      </div>
+    </label>
+  
+    <label>
+      Comment:
+      <textarea formControlName="comment"></textarea>
+      <div *ngIf="submitted && messageForm.controls.comment.errors" class="error">
+        <div *ngIf="messageForm.controls.comment.errors.required">A description of the meal is required</div>
+      </div>
+    </label>
+
+    <input type="submit" value="Send message" class="cta">
+  
+  </form>
+
+  <div *ngIf="submitted" class="results">
+    <strong>Name:</strong> 
+    <span>{{ messageForm.controls.name.value }}</span>
+
+    <strong>Message:</strong> 
+    <span>{{ messageForm.controls.message.value }}</span>
+  </div>
+

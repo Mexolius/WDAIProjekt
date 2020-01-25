@@ -1,0 +1,19 @@
+p {
+    position: relative;
+    align-self: center;
+    padding-right: 2%;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+div{
+    size:inherit;
+    display: grid;
+    grid-template-columns: 15% auto;
+}
